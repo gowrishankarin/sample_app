@@ -10,8 +10,44 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
+<div id="googlemaps"></div>
 	<%= render 'layouts/header' %>
-	<div class="container">
+	
+
+
+
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+	<script type="text/javascript">
+	var position = [51.5072, 0.1275];
+
+	function showGoogleMaps() {
+		var latLng = new google.maps.LatLng(position[0], position[1]);
+
+		var mapOptions = {
+			zoom: 14,
+			streetViewControl: false,
+			scaleControl: true,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			center: latLng
+		};
+
+		map = new google.maps.Map(document.getElementById('googlemaps'),
+			mapOptions);
+
+		marker  = new google.maps.Marker({
+			position: latLng,
+			map: map,
+			draggable: false,
+			animation: google.maps.Animation.DROP
+		});
+	}
+
+	google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+
+	</script>
+
+	<div class="container" style="position:relative">
 		<% flash.each do |key, value| %>
 			<div class="alert alert-<%= key %>"><%= value %></div>
 		<% end %>
@@ -19,5 +55,6 @@
 		<%= render 'layouts/footer' %>
 		<%= debug(params) if Rails.env.development? %>
 	</div>	
+
 </body>
 </html>

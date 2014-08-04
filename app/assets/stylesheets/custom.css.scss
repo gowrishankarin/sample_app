@@ -89,7 +89,13 @@ footer {
 	margin-top: 45px;
 	padding-top: 5px;
 	border-top: 1px solid #eaeaea;
-	color: $lightGray;
+	color: white;
+	bottom: 0;
+	background-color: #1b1b1b;
+	height: 27px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius:5px;
 	a {
 		color: #555;
 		&:hover {
@@ -174,9 +180,16 @@ input {
 }
 
 
+/* Google Map Background */
 
-
-
+#googlemaps {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 0;
+}
 
 
 
