@@ -3,6 +3,7 @@
 /* variable */
 $lightGray: #999;
 $grayMediumLight: #eaeaea;
+$grayMediumDark: #DDE4EB;
 
 @mixin box_sizing {
 	-moz-box-sizing: border-box;
@@ -126,6 +127,11 @@ footer {
 	@include box_sizing;
 }
 
+.main-content {
+	background-color: $grayMediumDark;
+	
+}
+
 /* sidebar */
 
 aside {
@@ -206,15 +212,36 @@ input {
 	}
 }
 
+/* microposts */
 
+.microposts {
+	list-style: none;
+	margin: 10px 0 0 0;
+	li {
+		padding: 10px 0;
+		border-top: 1px solid #e8e8e8
+	}
+}
 
+.content {
+	display: block;
+}
 
+.timestamp {
+	color: $grayLight;
+}
 
+.gravatar {
+	float: left;
+	margin-right: 10px;
+}
 
-
-
-
-
+aside {
+	textarea {
+		height: 100px;
+		margin-bottom: 5px;
+	}
+}
 
 
 
