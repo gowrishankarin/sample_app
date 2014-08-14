@@ -1,12 +1,35 @@
  
-<div class="hero-unit">
-	<h1>Welcome to Car Space</h1>
-	<h2>
-		This is the home page for the collective consumption app
-		<a href="http://tribe21.in">Car Space</a>
-		sample application.
-	</h2>
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
 
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+
+<% if signed_in? %>
+
+	<div class="row">
+		<aside class="row">
+			<section>
+				<%= render 'shared/user_info' %>
+			</section>
+			<section>
+				<%= render 'shared/micropost_form' %>
+			</section>
+		</aside>
+	</div>
+
+<% else %>
+
+
+	<div class="hero-unit">
+
+		<h1>
+		Welcome to Car Space
+		</h1>
+		<h2>
+			This is the home page for the collective consumption app
+			<a href="http://tribe21.in">Car Space</a>
+			sample application.
+		</h2>
+		<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+	</div>
+
+	<%= link_to image_tag("rails.png", alt: "Rails"), 'http://tribe21.in/' %>
+
+<% end %>
