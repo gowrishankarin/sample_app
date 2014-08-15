@@ -2,11 +2,11 @@
 # @Author: Gowri Gary Shankar
 # @Date:   2014-07-28 22:08:21
 # @Last Modified by:   Gowri Gary Shankar
-# @Last Modified time: 2014-08-06 22:30:07
+# @Last Modified time: 2014-08-15 23:32:56
 
 
 def full_title(page_title) 
-	base_title = "Ruby on Rails Tutorial Sample App"
+	base_title = "Car Space, Car pooling redefined"
 	if page_title.empty?
 		base_title
 	else
